@@ -1,0 +1,24 @@
+/* miniprogram/pages/circle/circle.wxss */
+
+.wrap{
+  width: 90%;
+  margin: 0 auto;
+}
+.search-box{
+  position: relative;
+}
+.search-box input{
+  font-size: 34rpx;
+  height: 60rpx;
+  border-bottom: 1rpx solid #cecece;
+}
+.search-box button{
+  width: 100rpx;
+  height: 60rpx;
+  display: inline-block;
+  font-size: 40rpx;
+  line-height: 60rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

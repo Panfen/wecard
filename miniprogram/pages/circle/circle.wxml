@@ -1,0 +1,16 @@
+<!--miniprogram/pages/circle/circle.wxml-->
+<import src="/template/card/card.wxml" />
+
+<view class="container">
+  <view class='wrap'>
+    <view class='search-box'>
+      <input class='searchinput' placeholder='搜索'></input>
+      <button><text class='iconfont icon-weibiaoti-'></text></button>
+    </view>
+    <view class='list-box'>
+      <view class='card-box'>
+        <template is="card" data="{{...card}}" />
+      </view>
+    </view>
+  </view>
+</view>

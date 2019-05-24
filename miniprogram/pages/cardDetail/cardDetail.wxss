@@ -1,0 +1,77 @@
+/* miniprogram/pages/cardDetail/cardDetail.wxss */
+
+.container .wrap{
+  width: 90%;
+  margin: 0 auto;
+}
+.container .wrap .card-wrap{
+  width: 100%;
+  margin-top: 20rpx; 
+}
+
+.container .button-box{
+  margin: 30rpx 0;
+  padding-top: 4px; 
+  text-align: center;
+}
+.container .button-box button{
+  width: 48%;
+  line-height: 78rpx;
+  font-size: 34rpx;
+  border-radius: 39rpx;
+  border: 1rpx solid #1AAD19;
+}
+.container .button-box button:last-child{
+  color: #1AAD19;
+  margin-left: 4%;
+  background: #fff;
+}
+.container .act-box .item{
+  display: inline-block;
+  background: #f6f6f6;
+  padding: 30rpx;
+  border-radius: 14rpx;
+  margin-left: 30rpx; 
+  border: 1rpx solid rgba(104, 102, 102, 0.1);
+  box-shadow: 0 0 16rpx rgba(104, 102, 102, 0.2);
+  
+}
+.container .act-box .item:first-child{
+  margin-left: 0; 
+}
+.container .act-box .item text{
+  color: #333333;
+  font-size: 30rpx; 
+}
+.container .act-box .item .iconfont{
+  color: #1AAD19;
+  font-size: 28rpx;
+}
+.container .act-box .item .iconfont text{
+  color: #999;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+.container .viewer-box{
+  margin-top: 34rpx;
+}
+.container .viewer-box image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 6rpx;
+  margin-right: 10rpx; 
+  border: 1rpx solid rgba(104, 102, 102, 0.1);
+}
+.container .viewer-box image:last-child{
+  margin: 0;
+}
+.container .viewer-box text{
+  color: #999;
+  display: block;
+  font-size: 28rpx;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

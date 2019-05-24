@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<import src="/template/card/card.wxml" />
+
+<view class="container">
+
+  <view class='top'>
+    <image src='{{mycard.avatar_url}}'></image>
+    <view class='card-wrap'>
+      <view class='card-box'>
+        <template is="card" data="{{...mycard}}" />
+      </view>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    <view class='button-box'>
+      <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
+      <button type='default' size='mini' bindtap="onEditinfo">编辑资料</button>
+    </view>
+  </view>
+
+</view>

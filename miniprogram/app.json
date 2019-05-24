@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/guide/guide",
+    "pages/circle/circle",
+    "pages/cardDetail/cardDetail"
+  ],
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tabar_card_selected.png",
+        "iconPath": "images/tabar_card.png",
+        "pagePath": "pages/index/index",
+        "text": "我的名片"
+      },
+      {
+        "selectedIconPath": "images/tabar_circle_selected.png",
+        "iconPath": "images/tabar_circle.png",
+        "pagePath": "pages/circle/circle",
+        "text": "名片圈"
+      },
+      {
+        "selectedIconPath": "images/tabar_center_selected.png",
+        "iconPath": "images/tabar_center.png",
+        "pagePath": "pages/guide/guide",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "微卡名片",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

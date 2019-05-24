@@ -1,0 +1,44 @@
+<!--miniprogram/pages/cardDetail/cardDetail.wxml-->
+<import src="/template/card/card.wxml" />
+
+<view class='container'>
+  <view class='wrap'>
+    <view class='card-wrap'>
+      <template is="card" data="{{...mycard}}" />
+    </view>
+    <view class='button-box'>
+      <button type='primary' size='mini' bindtap="onCollectCard">收藏名片</button>
+      <button type='default' size='mini' bindtap="onShareCard">分享名片</button>
+    </view>
+    <view class='act-box'>
+      <scroll-view scroll-x style='white-space: nowrap;'>
+        <view class='item'>
+          <view class='iconfont icon-dianhua'><text>拨打电话</text></view>
+          <text class=''>15768438827</text>
+        </view>
+        <view class='item'>
+          <view class='iconfont icon-weixin'><text>添加微信</text></view>
+          <text class=''>15768438827</text>
+        </view>
+        <view class='item'>
+          <view class='iconfont icon-youjian'><text>复制邮件</text></view>
+          <text class=''>280995323@qq.com</text>
+        </view>
+        <view class='item'>
+          <view class='iconfont icon-home'><text>公司名称</text></view>
+          <text class=''>杭州慧创科技</text>
+        </view>
+        <view class='item'>
+          <view class='iconfont icon-location'><text>地址导航</text></view>
+          <text class=''>钱塘新区新湾街道蓝色海岸13-1-402</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='viewer-box'>
+      <image src='http://img5.imgtn.bdimg.com/it/u=2230408755,766665122&fm=11&gp=0.jpg'></image>
+      <image src='http://img5.imgtn.bdimg.com/it/u=1516884168,1211180537&fm=11&gp=0.jpg'></image>
+      <image src='http://img0.imgtn.bdimg.com/it/u=3327905304,3770880838&fm=11&gp=0.jpg'></image>
+      <text>最近共3人浏览</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+/**index.wxss**/
+
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container .top{
+  width: 100%;
+  height: 700rpx;
+  background: #fff;
+  background-size: 100% 700rpx;
+  position: relative;
+}
+.container .top image{
+  width: 100%;
+  height: 100%;
+}
+
+.container .top .card-wrap{
+  width: 100%;
+  position: absolute;
+  bottom: -40rpx;
+  left: 0;
+}
+.container .top .card-wrap .card-box{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container .bottom{
+  width: 100%;
+  margin-top: 40rpx;
+}
+.container .bottom .button-box{
+  margin-top: 60rpx;
+  text-align: center;
+}
+.container .bottom .button-box button{
+  width: 34%;
+  font-size: 34rpx;
+  border: 1rpx solid #1AAD19;
+}
+.container .bottom .button-box button:last-child{
+  color: #1AAD19;
+  margin-left: 40rpx;
+  background: #fff;
+}

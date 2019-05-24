@@ -1,0 +1,46 @@
+/* 阿里字体图标样式 */
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1205494 */
+  src: url('//at.alicdn.com/t/font_1205494_vkrjh66n02.eot');
+  src: url('//at.alicdn.com/t/font_1205494_vkrjh66n02.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1205494_vkrjh66n02.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1205494_vkrjh66n02.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1205494_vkrjh66n02.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1205494_vkrjh66n02.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location:before {
+  content: "\e790";
+}
+
+.icon-home:before {
+  content: "\e7c6";
+}
+
+.icon-phone:before {
+  content: "\e7e3";
+}
+
+.icon-weixin:before {
+  content: "\e61c";
+}
+.icon-dianhua:before {
+  content: "\e611";
+}
+.icon-youjian:before {
+  content: "\e61a";
+}
+.icon-weibiaoti-:before {
+  content: "\e601";
+}
+.icon-recommend:before {
+  content: "\e679";
+}

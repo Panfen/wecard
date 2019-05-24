@@ -1,0 +1,15 @@
+<!--miniprogram/pages/utils/card/card.wxml-->
+<template name='card'>
+  <view class='card'>
+    <view class='name-box'>
+      <text class='name'>{{name}}</text>
+      <text class='position'>{{position}}</text>
+      <image class='avatar' src='{{avatar_url}}'></image>
+    </view>
+    <view class='info-box'>
+      <text class='iconfont icon-home'> {{company}}</text>
+      <text class='iconfont icon-phone'> {{phone}}</text>
+      <text class='iconfont icon-location'> {{location}}</text>
+    </view>
+  </view>
+</template>
