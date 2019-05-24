@@ -6,6 +6,7 @@
 }
 .search-box{
   position: relative;
+  margin-bottom: 40rpx;
 }
 .search-box input{
   font-size: 34rpx;
@@ -21,4 +22,10 @@
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.list-box .card-box{
+  margin-bottom: 40rpx;
+}
+.list-box .card-box:last-child{
+  margin-bottom: 0;
 }

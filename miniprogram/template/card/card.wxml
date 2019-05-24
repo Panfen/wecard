@@ -1,6 +1,7 @@
 <!--miniprogram/pages/utils/card/card.wxml-->
 <template name='card'>
   <view class='card'>
+    <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
     <view class='name-box'>
       <text class='name'>{{name}}</text>
       <text class='position'>{{position}}</text>

@@ -8,8 +8,8 @@
       <button><text class='iconfont icon-weibiaoti-'></text></button>
     </view>
     <view class='list-box'>
-      <view class='card-box'>
-        <template is="card" data="{{...card}}" />
+      <view class='card-box' wx:key="index" wx:for="{{cardList}}">
+        <template is="card" data="{{...item}}" />
       </view>
     </view>
   </view>
