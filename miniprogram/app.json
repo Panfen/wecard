@@ -13,7 +13,10 @@
     "pages/openapi/cloudid/cloudid",
     "pages/guide/guide",
     "pages/circle/circle",
-    "pages/cardDetail/cardDetail"
+    "pages/cardDetail/cardDetail",
+    "pages/newCard/newCard",
+    "template/card2/card2",
+    "template/card3/card3"
   ],
   "tabBar": {
     "color": "#a9b7b7",

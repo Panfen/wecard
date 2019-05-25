@@ -1,7 +1,5 @@
-/* miniprogram/pages/utils/card/card.wxss */
-/* 名片样式 */
-
-.card{
+/* miniprogram/template/card2/card2.wxss */
+.card2{
   margin: 0 auto;
   padding: 60rpx 0 60rpx 0;
   background: #fff;
@@ -10,42 +8,44 @@
   border: 1rpx solid rgba(104, 102, 102, 0.1);
   box-shadow: 0rpx 0rpx 12rpx rgba(104, 102, 102, 0.2);
 }
-.card .recommend{
+.card2 .recommend{
   color: #FF6600;
   position: absolute;
   top: -8rpx;
   left: -4rpx;
   font-size: 90rpx;
 }
-.card .name-box, .card .info-box{
-  position: relative;
-  margin: 0 60rpx;
+.card2 .company-box{
+  font-size: 34rpx;
+  color: #555;
+  margin: 0 60rpx 0 60rpx;
 }
-.card text{
+.card2 .name-box{
+  margin: 10rpx auto;
+  text-align: center;
+}
+.card2 .name-box text{
   display: block;
 }
-.card .name-box .name{
+.card2 .name-box .name{
   color: #333;
   font-size: 36rpx;
-  font-weight: 600;
+  font-weight: bold;
+  font-family: 'KaiTi'
 }
-.card .name-box .position{
+.card2 .name-box .position{
   color: #666;
   font-size: 30rpx;
 }
-.card .name-box image.avatar{
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 10rpx;
-  position: absolute;
-  right: 0;
-  top: 0;
+.card2 .info-box{
+  margin: 0 60rpx 0 60rpx;
 }
-.card .info-box{
-  margin-top: 14rpx;
-}
-.card .info-box text{
+.card2 .info-box text{
+  width: 50%;
   font-size: 28rpx;
   color: #999;
   padding-top: 6rpx;
+  display: inline-block;
 }
+
+

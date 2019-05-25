@@ -1,0 +1,19 @@
+<!--miniprogram/template/card2/card2.wxml-->
+<template name='card2'>
+  <view class='card2'>
+    <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
+    <view class='company-box'>
+      <text class='company'>{{company}}</text>
+    </view>
+    <view class='name-box'>
+      <text class='name'>{{name}}</text>
+      <text class='position'>{{position}}</text>
+    </view>
+    <view class='info-box'>
+      <text class='iconfont icon-home'> {{company}}</text>
+      <text class='iconfont icon-phone'> {{phone}}</text>
+      <text class='iconfont icon-location'> {{location}}</text>
+      <text class='iconfont icon-youjian'> {{email}}</text>
+    </view>
+  </view>
+</template>

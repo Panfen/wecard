@@ -3,7 +3,7 @@
 
 <view class="container">
 
-  <view class='top'>
+  <view class="top">
     <image src='{{mycard.avatar_url}}'></image>
     <view class='card-wrap'>
       <view class='card-box'>
@@ -12,11 +12,27 @@
     </view>
   </view>
 
-  <view class='bottom'>
+  <view class="bottom">
     <view class='button-box'>
       <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
-      <button type='default' size='mini' bindtap="onEditinfo">编辑资料</button>
+      <button type='default' size='mini' bindtap="onEditCard">编辑名片</button>
     </view>
   </view>
 
+  <!--
+  <view class="edit-popup">
+    <modal title="编辑名片" hidden="{{hideEditPopup}}" bindcancel="onhideEditPopup" bindcomfirm="onUpdateCard">
+      <form bindsubmit='onSubmitCard' bindreset='onFormRest'>
+        <view class="section">
+          <view class="section__title">姓名</view>
+          <input name="input" placeholder="..." />
+        </view>
+        <view class="section">
+          <view class="section__title">电话</view>
+          <input name="input" placeholder="..." />
+        </view>
+      </form>
+    </modal>
+  </view>
+  -->
 </view>

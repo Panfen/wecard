@@ -1,0 +1,49 @@
+/* miniprogram/template/card3/card3.wxss */
+.card3{
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(104, 102, 102, 0.1);
+  box-shadow: 0rpx 0rpx 12rpx rgba(104, 102, 102, 0.2);
+}
+.card3 .img-box{
+  position: relative;
+}
+.card3 .img-box .bgcover{
+  width: 100%;
+  height: 400rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+.card3 .img-box .bgcover{
+  width: 100%;
+  height: 400rpx;
+}
+.card3 .img-box .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: -30rpx;
+  border: 1rpx solid #ccc;
+}
+.card3 .info-box{
+  padding: 30rpx 60rpx;
+}
+.card3 .info-box text{
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 6rpx;
+  display: block;
+}
+.card3 .info-box .name{
+  color: #333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.card3 .info-box .position{
+  color: #666;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}

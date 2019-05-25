@@ -21,8 +21,10 @@ Page({
       _openid: 'oNPv50Aht_HLlkyfpsgIYbTV1z_U'
     }).get({
       success: res => {
+        const card = res.data[0]
+        card._isrecommend = 0
         this.setData({
-          mycard: res.data[0]
+          mycard: card
         })
       },
       fail: err => {
@@ -35,9 +37,9 @@ Page({
     
   },
 
-  onEditinfo: function() {
+  onEditCard: function() {
     wx.navigateTo({
-      url: '../cardDetail/cardDetail',
+      url: '../newCard/newCard',
     })
   }
 

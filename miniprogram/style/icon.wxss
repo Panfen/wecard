@@ -17,30 +17,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 定位 */
 .icon-location:before {
   content: "\e790";
 }
 
+/* 房子 */
 .icon-home:before {
   content: "\e7c6";
 }
 
+/* 电话 */
 .icon-phone:before {
   content: "\e7e3";
 }
 
+/* 微信 */
 .icon-weixin:before {
   content: "\e61c";
 }
+
+/* 电话-实心 */
 .icon-dianhua:before {
   content: "\e611";
 }
+
+/* 邮件 */
 .icon-youjian:before {
   content: "\e61a";
 }
+
+/* 搜索 */
 .icon-weibiaoti-:before {
   content: "\e601";
 }
+
+/* 推荐 */
 .icon-recommend:before {
   content: "\e679";
+}
+
+/* 人头 */
+.icon-icon_zhanghao:before{
+  content: "\eb8a";
 }
