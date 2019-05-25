@@ -1,7 +1,7 @@
 /* miniprogram/pages/newCard/newCard.wxss */
 .container{
-  height: 100%;
   background: #fafafa;
+  padding-bottom: 160rpx;
 }
 .type-box{
   width: 100%;
@@ -18,9 +18,11 @@
   color: #555;
   font-size: 30rpx; 
   display: block;
+  margin: 20rpx 0;
 }
-.type-box .choices-wrap .choices{
-  padding: 20rpx 0;
+.type-box .choices{
+  width: 90%;
+  margin: 0 auto;
 }
 .type-box .choices .pattern{
   height: 80rpx;
@@ -149,4 +151,47 @@
 .type-box .choices .pattern3 .info text:last-child{
   width: 40rpx;
   margin: 0 0 0 10rpx;
+}
+.card-form input{
+  width: 90%;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  text-indent: 30rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid rgba(104, 102, 102, 0.1);
+  box-shadow: 0rpx 0rpx 6rpx rgba(104, 102, 102, 0.1);
+}
+.card-form .img-box{
+  width: 90%;
+  margin: 0 auto;
+}
+.card-form .img-box button{
+  background: #fff;
+  margin-right: 16rpx;
+  color: #999;
+  border: 1rpx solid #ccc;
+}
+.card-form .img-box button:last-child{
+  margin-right: 0;
+}
+.card-form switch{
+  margin-left: 5%;
+}
+.card-form .button-box{
+  width: 90%;
+  margin: 30rpx auto;
+  padding-top: 4px; 
+  text-align: center;
+}
+.card-form .button-box button{
+  width: 48%;
+  line-height: 78rpx;
+  font-size: 34rpx;
+}
+.card-form .button-box button:first-child{
+  margin-right: 4%;
 }

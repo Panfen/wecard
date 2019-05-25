@@ -56,6 +56,27 @@
           </view>
         </view>
       </view>
+      <text class='title'>信息填写</text>
+      <form class='card-form' bindsubmit='onCardSubmit' bindreset='onCardReset'>
+        <input placeholder='姓名'></input>
+        <input placeholder='职位'></input>
+        <input placeholder='电话号码'></input>
+        <input placeholder='微信'></input>
+        <input placeholder='公司名称'></input>
+        <input placeholder='电子邮件'></input>
+        <text class='title'>上传头像</text>
+        <view class='img-box'>
+          <button type='default' size='mini' bindtap="doUploadAvatar">头像</button>
+          <button type='default' size='mini' bindtap="doUploadBgcover">背景1</button>
+          <button type='default' size='mini' bindtap="doUploadBgcover">背景2</button>
+        </view>
+        <text class='title'>公开名片</text>
+        <switch name="isPubublic" />
+         <view class='button-box'>
+          <button type='warn' size='mini' bindtap="onCancelCard">取消</button>
+          <button type='primary' size='mini' bindtap="onSaveCard">保存</button>
+        </view>
+      </form>
     </view>
   </view>
 </view>

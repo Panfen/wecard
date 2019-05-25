@@ -8,6 +8,7 @@ Page({
       phone: '电话号码',
       location: '公司地址家庭住址',
       email: '电子邮件',
+      background_url: 'http://img0.imgtn.bdimg.com/it/u=2619623045,2062180631&fm=26&gp=0.jpg',
       avatar_url: 'http://img1.imgtn.bdimg.com/it/u=1975246254,621884563&fm=26&gp=0.jpg'
     }
   },

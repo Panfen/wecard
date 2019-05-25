@@ -3,8 +3,8 @@
   <view class='card3'>
     <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
     <view class='img-box'>
-      <image class='bgcover' src='{{avatar_url}}'></image>
-      <image class='avatar' src='{{avatar_url}}'></image>
+      <image class='bgcover' src='{{background_url}}'></image>
+      <view class='avatar'><image src='{{avatar_url}}'></image></view>
     </view>
     <view class='info-box'>
       <text class='name'>{{name}}</text>
