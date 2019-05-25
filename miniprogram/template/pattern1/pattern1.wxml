@@ -1,5 +1,4 @@
-<!--miniprogram/pages/utils/card/card.wxml-->
-<template name='card'>
+<template name='pattern1'>
   <view class='card'>
     <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
     <view class='name-box'>

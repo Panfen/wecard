@@ -1,26 +1,18 @@
 <!--miniprogram/pages/newCard/newCard.wxml-->
-<import src="/template/card/card.wxml" />
-<import src="/template/card2/card2.wxml" />
-<import src="/template/card3/card3.wxml" />
+<import src="/template/pattern1/pattern1.wxml" />
+<import src="/template/pattern2/pattern2.wxml" />
+<import src="/template/pattern3/pattern3.wxml" />
 
 <view class="container">
   <view class='type-box'>
     <view class='rendering'>
-      <view class='item' wx:if="{{currentPattern == 'pattern1'}}">
-        <template is="card" data="{{...defaultCard}}" />
-      </view>
-      <view class='item' wx:if="{{currentPattern == 'pattern2'}}">
-        <template is="card2" data="{{...defaultCard}}" />
-      </view>
-      <view class='item' wx:if="{{currentPattern == 'pattern3'}}">
-        <template is="card3" data="{{...defaultCard}}" />
-      </view>
+      <template is="{{currentCard.pattern}}" data="{{...currentCard}}" />
     </view>
     <view class='choices-wrap'>
       <text class='title'>样式选择</text>
       <view class='choices'>
         <!-- 样式1选项 -->
-        <view class="pattern pattern1 {{currentPattern == 'pattern1'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern1">
+        <view class="pattern pattern1 {{currentCard.pattern == 'pattern1'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern1">
           <text class='name'></text>
           <text class='position'></text>
           <text class='item'></text>
@@ -30,7 +22,7 @@
         </view>
 
         <!-- 样式2选项 -->
-        <view class="pattern pattern2 {{currentPattern == 'pattern2'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern2">
+        <view class="pattern pattern2 {{currentCard.pattern == 'pattern2'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern2">
           <text class='company'></text>
           <view class='name'><text></text></view>
           <view class='info'>
@@ -46,7 +38,7 @@
         </view>
 
         <!-- 样式3选项 -->
-        <view class="pattern pattern3 {{currentPattern == 'pattern3'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern3">
+        <view class="pattern pattern3 {{currentCard.pattern == 'pattern3'?'selected':''}}" bindtap='onChoosePattern' data-pattern="pattern3">
           <view class='img'>
             <text></text>
           </view>
@@ -58,23 +50,23 @@
       </view>
       <text class='title'>信息填写</text>
       <form class='card-form' bindsubmit='onCardSubmit' bindreset='onCardReset'>
-        <input placeholder='姓名'></input>
-        <input placeholder='职位'></input>
-        <input placeholder='电话号码'></input>
-        <input placeholder='微信'></input>
-        <input placeholder='公司名称'></input>
-        <input placeholder='电子邮件'></input>
+        <input name='name' placeholder='姓名'></input>
+        <input name='position' placeholder='职位'></input>
+        <input name='phone' placeholder='电话号码'></input>
+        <input name='weixin' placeholder='微信'></input>
+        <input name='company' placeholder='公司名称'></input>
+        <input name='email' placeholder='电子邮件'></input>
         <text class='title'>上传头像</text>
         <view class='img-box'>
-          <button type='default' size='mini' bindtap="doUploadAvatar">头像</button>
-          <button type='default' size='mini' bindtap="doUploadBgcover">背景1</button>
-          <button type='default' size='mini' bindtap="doUploadBgcover">背景2</button>
+          <button type='default' size='mini' bindtap="onUploadAvatar">头像</button>
+          <button type='default' size='mini' bindtap="onUploadBgcover">背景1</button>
+          <button type='default' size='mini' bindtap="onUploadBgcover">背景2</button>
         </view>
         <text class='title'>公开名片</text>
-        <switch name="isPubublic" />
+        <switch name="isPublic" />
          <view class='button-box'>
-          <button type='warn' size='mini' bindtap="onCancelCard">取消</button>
-          <button type='primary' size='mini' bindtap="onSaveCard">保存</button>
+          <button type='warn' size='mini' form-type="onCancelCard">取消</button>
+          <button type='primary' size='mini' form-type="submit">保存</button>
         </view>
       </form>
     </view>

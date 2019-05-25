@@ -1,4 +1,5 @@
-/* miniprogram/template/card2/card2.wxss */
+/* 名片样式2 */
+
 .card2{
   margin: 0 auto;
   padding: 60rpx 0 60rpx 0;

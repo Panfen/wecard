@@ -1,5 +1,4 @@
-/* miniprogram/pages/utils/card/card.wxss */
-/* 名片样式 */
+/* 名片样式1 */
 
 .card{
   margin: 0 auto;

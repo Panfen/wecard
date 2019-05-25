@@ -1,16 +1,17 @@
-<!--miniprogram/template/card3/card3.wxml-->
-<template name='card3'>
-  <view class='card3'>
+<template name='pattern2'>
+  <view class='card2'>
     <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
-    <view class='img-box'>
-      <image class='bgcover' src='{{background_url}}'></image>
-      <view class='avatar'><image src='{{avatar_url}}'></image></view>
+    <view class='company-box'>
+      <text class='company'>{{company}}</text>
     </view>
-    <view class='info-box'>
+    <view class='name-box'>
       <text class='name'>{{name}}</text>
       <text class='position'>{{position}}</text>
+    </view>
+    <view class='info-box'>
       <text class='iconfont icon-home'> {{company}}</text>
       <text class='iconfont icon-phone'> {{phone}}</text>
+      <text class='iconfont icon-location'> {{location}}</text>
       <text class='iconfont icon-youjian'> {{email}}</text>
     </view>
   </view>

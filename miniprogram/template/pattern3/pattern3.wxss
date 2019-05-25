@@ -1,4 +1,5 @@
-/* miniprogram/template/card3/card3.wxss */
+/* 名片样式3 */
+
 .card3{
   width: 80%;
   margin: 0 auto;

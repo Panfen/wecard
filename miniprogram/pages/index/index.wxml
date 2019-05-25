@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<import src="/template/card/card.wxml" />
+<import src="/template/pattern1/pattern1.wxml" />
 
 <view class="container">
 
@@ -7,7 +7,7 @@
     <image src='{{mycard.avatar_url}}'></image>
     <view class='card-wrap'>
       <view class='card-box'>
-        <template is="card" data="{{...mycard}}" />
+        <template is="pattern1" data="{{...mycard}}" />
       </view>
     </view>
   </view>

@@ -1,5 +1,5 @@
 <!--miniprogram/pages/circle/circle.wxml-->
-<import src="/template/card/card.wxml" />
+<import src="/template/pattern1/pattern1.wxml" />
 
 <view class="container">
   <view class='wrap'>
@@ -9,7 +9,7 @@
     </view>
     <view class='list-box'>
       <view class='card-box' wx:key="index" wx:for="{{cardList}}">
-        <template is="card" data="{{...item}}" />
+        <template is="pattern1" data="{{...item}}" />
       </view>
     </view>
   </view>

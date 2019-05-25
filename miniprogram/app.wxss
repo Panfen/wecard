@@ -1,8 +1,8 @@
 /**app.wxss**/
 @import 'style/icon.wxss';
-@import 'template/card/card.wxss';
-@import 'template/card2/card2.wxss';
-@import 'template/card3/card3.wxss';
+@import 'template/pattern1/pattern1.wxss';
+@import 'template/pattern2/pattern2.wxss';
+@import 'template/pattern3/pattern3.wxss';
 
 page{
   height: 100%;
