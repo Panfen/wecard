@@ -132,7 +132,7 @@
   width: 20rpx;
   height: 20rpx;
   background: #ccc;
-  border-radius: 6rpx;
+  border-radius: 10rpx;
   position: absolute;
   right: 8rpx;
   bottom: -6rpx;
@@ -153,14 +153,14 @@
   margin: 0 0 0 10rpx;
 }
 .card-form input{
-  width: 90%;
+  width: calc(90% - 30rpx);
   margin: 0 auto;
   height: 80rpx;
   line-height: 80rpx;
   background: #fff;
   margin-bottom: 10rpx;
   font-size: 32rpx;
-  text-indent: 30rpx;
+  padding-left: 30rpx;
   border-radius: 8rpx;
   border: 1rpx solid rgba(104, 102, 102, 0.1);
   box-shadow: 0rpx 0rpx 6rpx rgba(104, 102, 102, 0.1);

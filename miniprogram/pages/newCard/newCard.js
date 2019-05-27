@@ -9,26 +9,34 @@ Page({
       email: '电子邮件',
       pattern: 'pattern1',
       background_url: 'http://img0.imgtn.bdimg.com/it/u=2619623045,2062180631&fm=26&gp=0.jpg',
-      avatar_url: 'http://img1.imgtn.bdimg.com/it/u=1975246254,621884563&fm=26&gp=0.jpg'
+      avatar_url: 'http://img5.imgtn.bdimg.com/it/u=2290911925,3144166826&fm=26&gp=0.jpg'
     }
   },
 
   onLoad: function (options) {
-
+    
   },
 
   onChoosePattern: function (event) {
-    const currentCard = this.data.currentCard
-    currentCard.pattern = event.currentTarget.dataset.pattern
-    this.setData({
-      currentCard
-    })
+    this.setCurrentCard(this, 'pattern', event.currentTarget.dataset.pattern)
   },
 
   // 上传头像
   onUploadAvatar: function () {
-    uploadImage(function(res){
-      this.setData({})
+    const that = this
+    that.uploadImage(function(res, imagePath){
+      if (res.statusCode == 200) {
+        that.setCurrentCard(that, 'avatar_url', imagePath)
+      }
+    })
+  },
+
+  // 设置currentCard某一项
+  setCurrentCard: function (that, key, value) {
+    const currentCard = that.data.currentCard
+    currentCard[key] = value
+    that.setData({
+      currentCard
     })
   },
 
@@ -50,8 +58,10 @@ Page({
           cloudPath,
           filePath,
           success: res => {
-            console.log(JSON.stringify(res, null, 2))
-            cb(res)
+            wx.showToast({
+              title: '上传成功',
+            })
+            cb(res, filePath)
           },
           fail: e => {
             wx.showToast({

@@ -4,7 +4,7 @@
 <view class='container'>
   <view class='wrap'>
     <view class='card-wrap'>
-      <template is="pattern1" data="{{...mycard}}" />
+      <template is="pattern1" data="{{...currentCard}}" />
     </view>
     <view class='button-box'>
       <button type='primary' size='mini' bindtap="onCollectCard">收藏名片</button>
@@ -14,23 +14,23 @@
       <scroll-view scroll-x style='white-space: nowrap;'>
         <view class='item'>
           <view class='iconfont icon-dianhua'><text>拨打电话</text></view>
-          <text class=''>15768438827</text>
+          <text class=''>{{currentCard.phone}}</text>
         </view>
         <view class='item'>
           <view class='iconfont icon-weixin'><text>添加微信</text></view>
-          <text class=''>15768438827</text>
+          <text class=''>{{currentCard.weixin}}</text>
         </view>
         <view class='item'>
           <view class='iconfont icon-youjian'><text>复制邮件</text></view>
-          <text class=''>280995323@qq.com</text>
+          <text class=''>{{currentCard.email}}</text>
         </view>
         <view class='item'>
           <view class='iconfont icon-home'><text>公司名称</text></view>
-          <text class=''>杭州慧创科技</text>
+          <text class=''>{{currentCard.company}}</text>
         </view>
         <view class='item'>
           <view class='iconfont icon-location'><text>地址导航</text></view>
-          <text class=''>钱塘新区新湾街道蓝色海岸13-1-402</text>
+          <text class=''>{{currentCard.location}}</text>
         </view>
       </scroll-view>
     </view>

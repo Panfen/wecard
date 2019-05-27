@@ -9,7 +9,9 @@
     </view>
     <view class='list-box'>
       <view class='card-box' wx:key="index" wx:for="{{cardList}}">
-        <template is="pattern1" data="{{...item}}" />
+        <view bindtap="onViewCard" data-id="{{item._id}}">
+          <template is="pattern1" data="{{...item}}" />
+        </view>
       </view>
     </view>
   </view>

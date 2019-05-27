@@ -5,7 +5,6 @@ Page({
   },
 
   onLoad: function (options) {
-    // this.getCardList()
     wx.cloud.callFunction({
       name: 'getcardlist',
       data: {},
@@ -32,29 +31,15 @@ Page({
         })
       },
       fail: err => {
-        console.error('[数据库] [查询记录] 失败：', err)
+        console.error('数据库查询记录失败：', err)
       }
     })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onViewCard: function (e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../cardDetail/cardDetail?card_id=' + e.currentTarget.dataset.id,
+    })
   }
 })
