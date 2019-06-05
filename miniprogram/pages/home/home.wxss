@@ -1,17 +1,17 @@
 /* miniprogram/pages/home/home.wxss */
-.info-box{
+.name-box{
   width: 90%;
   margin: 0 auto;
   padding: 80rpx 0 50rpx 0;
   text-align: center;
   background: #1AAD19;
 }
-.info-box image{
+.name-box image{
   width: 120rpx;
   height: 120rpx;
   border-radius: 60rpx;
 }
-.info-box text{
+.name-box text{
   color: #fff;
   font-size: 32rpx;
   display: block;
@@ -20,12 +20,51 @@
 .item-box{
   width: 90%;
   margin: 20rpx auto;
-  border: 1rpx solid rgba(26, 173, 25, 0.4);
+  border: 1rpx solid rgba(225, 225, 227, 0.3);
 }
 
 .item-box .title{
   padding: 20rpx;
   color: #666;
-  font-size: 30rpx;
-  border-bottom: 1rpx solid rgba(26, 173, 25, 0.4);
+  display: block;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid rgba(225, 225, 227, 0.3);
 }
+.item-box .box-info .info{
+  display: inline-block;
+  width: 30%;
+  padding: 40rpx 0;
+  margin-right: 5%;
+}
+.item-box .box-info .info:last-child{
+  margin-right: 0;
+}
+.item-box .box-info .info .iconfont{
+  font-size: 58rpx;
+  margin-bottom: 10rpx;
+}
+.item-box .box-info .info .icon-icon_bangzhuwendang{
+  color: #06B871;
+}
+.item-box .box-info .info .icon-tubiao-zhexiantu{
+  color: #CCA161;
+}
+.item-box .box-info .info .icon-guanlianshebei{
+  color: #58A7CE;
+}
+.item-box .box-info .info .icon-APIjieru{
+  color: #58A7CE;
+}
+.item-box .box-info .info .icon-shenjing{
+  color: #06B871;
+}
+.item-box .box-info .info .icon-anquan{
+  color: #EB5F66;
+}
+.item-box .box-info .info text{
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+}
+

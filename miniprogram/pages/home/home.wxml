@@ -1,17 +1,43 @@
 <!--miniprogram/pages/home/home.wxml-->
 <view class="container">
-  <view class='info-box'>
+  <view class='name-box'>
     <image src='{{userInfo.avatarUrl}}'></image>
     <text>{{userInfo.nickName}}</text>
   </view>
 
   <view class='person-box item-box'>
     <text class='title'>我的</text>
-    <view class='box-info'></view>
+    <view class='box-info'>
+      <view class='info'>
+        <text class='iconfont icon-icon_bangzhuwendang'></text>
+        <text class='desc'>名片夹</text>
+      </view>
+      <view class='info'>
+        <text class='iconfont icon-tubiao-zhexiantu'></text>
+        <text class='desc'>递名片</text>
+      </view>
+      <view class='info'>
+        <text class='iconfont icon-guanlianshebei'></text>
+        <text class='desc'>名片好友</text>
+      </view>
+    </view>
   </view>
   <view class='wecard-bo item-box'>
     <text class='title'>微卡服务</text>
-    <view class='box-info'></view>
+    <view class='box-info'>
+      <view class='info'>
+        <text class='iconfont icon-APIjieru'></text>
+        <text class='desc'>名片打印</text>
+      </view>
+      <view class='info'>
+        <text class='iconfont icon-shenjing'></text>
+        <text class='desc'>扩散</text>
+      </view>
+      <view class='info'>
+        <text class='iconfont icon-anquan'></text>
+        <text class='desc'>安全</text>
+      </view>
+    </view>
   </view>
 
 </view>
