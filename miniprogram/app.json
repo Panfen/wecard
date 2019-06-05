@@ -14,7 +14,8 @@
     "pages/guide/guide",
     "pages/circle/circle",
     "pages/cardDetail/cardDetail",
-    "pages/newCard/newCard"
+    "pages/newCard/newCard",
+    "pages/home/home"
   ],
   "tabBar": {
     "color": "#a9b7b7",
@@ -36,8 +37,8 @@
       {
         "selectedIconPath": "images/tabar_center_selected.png",
         "iconPath": "images/tabar_center.png",
-        "pagePath": "pages/guide/guide",
-        "text": "个人中心"
+        "pagePath": "pages/home/home",
+        "text": "用户中心"
       }
     ]
   },

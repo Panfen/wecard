@@ -7,7 +7,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-    "checkSiteMap": false
+		"checkSiteMap": false
 	},
 	"appid": "wx443b619c249df4d0",
 	"projectname": "wecard",

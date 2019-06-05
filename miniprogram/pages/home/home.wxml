@@ -1,0 +1,17 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="container">
+  <view class='info-box'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+
+  <view class='person-box item-box'>
+    <text class='title'>我的</text>
+    <view class='box-info'></view>
+  </view>
+  <view class='wecard-bo item-box'>
+    <text class='title'>微卡服务</text>
+    <view class='box-info'></view>
+  </view>
+
+</view>

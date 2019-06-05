@@ -37,7 +37,6 @@ Page({
   },
 
   onViewCard: function (e) {
-    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../cardDetail/cardDetail?card_id=' + e.currentTarget.dataset.id,
     })
