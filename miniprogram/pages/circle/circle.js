@@ -5,6 +5,9 @@ Page({
   },
 
   onLoad: function (options) {
+    wx.showLoading({
+      title: '列表加载中',
+    })
     wx.cloud.callFunction({
       name: 'getcardlist',
       data: {},
@@ -15,6 +18,9 @@ Page({
       }, 
       fail: err => {
         console.error('[数据库] [云函数查询记录] 失败：', err)
+      },
+      complete: () => {
+        wx.hideLoading()
       }
     })
   },

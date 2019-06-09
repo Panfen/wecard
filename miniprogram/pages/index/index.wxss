@@ -6,6 +6,12 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+.container{
+  width: 100%;
+}
+.container .wrap{
+  width: 100%；
+}
 
 .container .top{
   width: 100%;
@@ -47,4 +53,37 @@ page {
   color: #1AAD19;
   margin-left: 40rpx;
   background: #fff;
+}
+.container .bottom .stats-box{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #666;
+}
+.container .bottom .stats-box .stats-item{
+  width: 30%;
+  padding-top: 40rpx;
+  display: inline-block;
+  margin-right: 5%;
+}
+
+.container .bottom .stats-box .stats-item:last-child{
+  margin-right: 0;
+}
+.container .bottom .stats-box text{
+  display: block;
+  text-align: center;
+}
+.container .bottom .stats-box text.iconfont{
+  font-size: 40rpx;
+  padding-bottom: 10rpx;
+}
+.container .bottom .stats-box text.liulan{
+  color: #538DBB;
+}
+.container .bottom .stats-box text.tuijian{
+  color: #FF0000;
+}
+.container .bottom .stats-box text.shoucang{
+  color: #FF6600;
 }

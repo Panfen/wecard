@@ -26,19 +26,19 @@
         "selectedIconPath": "images/tabar_card_selected.png",
         "iconPath": "images/tabar_card.png",
         "pagePath": "pages/index/index",
-        "text": "我的名片"
+        "text": "名片"
       },
       {
         "selectedIconPath": "images/tabar_circle_selected.png",
         "iconPath": "images/tabar_circle.png",
         "pagePath": "pages/circle/circle",
-        "text": "名片圈"
+        "text": "发现"
       },
       {
         "selectedIconPath": "images/tabar_center_selected.png",
         "iconPath": "images/tabar_center.png",
         "pagePath": "pages/home/home",
-        "text": "用户中心"
+        "text": "我的"
       }
     ]
   },

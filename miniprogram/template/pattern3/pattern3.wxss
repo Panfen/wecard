@@ -10,6 +10,7 @@
 }
 .card3 .img-box{
   position: relative;
+  background: url('http://img0.imgtn.bdimg.com/it/u=2619623045,2062180631&fm=26&gp=0.jpg')
 }
 .card3 .img-box .bgcover{
   width: 100%;
@@ -35,6 +36,8 @@
   width: 100%;
   height: 100%;
   border-radius: 81rpx;
+  background: url('http://img5.imgtn.bdimg.com/it/u=2290911925,3144166826&fm=26&gp=0.jpg') center center no-repeat;
+  background-size: cover; 
 }
 .card3 .info-box{
   padding: 30rpx 60rpx;

@@ -3,36 +3,40 @@
 
 <view class="container">
 
-  <view class="top">
-    <image src='{{mycard.avatar_url}}'></image>
-    <view class='card-wrap'>
-      <view class='card-box'>
-        <template is="pattern1" data="{{...mycard}}" />
+  <block wx:if="{{mycard.name}}">
+    <view class="top">
+      <image src='{{mycard.avatar_url}}'></image>
+      <view class='card-wrap'>
+        <view class='card-box'>
+          <template is="pattern1" data="{{...mycard}}" />
+        </view>
       </view>
     </view>
-  </view>
-
-  <view class="bottom">
-    <view class='button-box'>
-      <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
-      <button type='default' size='mini' bindtap="onEditCard">编辑名片</button>
+    <view class="bottom">
+      <view class='button-box'>
+        <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
+        <button type='default' size='mini' bindtap="onEditCard" data-id="{{mycard._id}}">编辑名片</button>
+      </view>
+      <view class='stats-box'>
+        <view class='stats-item'>
+          <text class='liulan iconfont icon-zitiyulan'></text>
+          <text>浏览:12665</text>
+        </view>
+        <view class='stats-item'>
+          <text class='shoucang iconfont icon-aixin_shixin'></text>
+          <text>推荐:2387</text>
+        </view>
+        <view class='stats-item'>
+          <text class='tuijian iconfont icon-ditu-xing'></text>
+          <text>收藏:9562</text>
+        </view>
+      </view>
     </view>
-  </view>
+  </block>
 
-  <!--
-  <view class="edit-popup">
-    <modal title="编辑名片" hidden="{{hideEditPopup}}" bindcancel="onhideEditPopup" bindcomfirm="onUpdateCard">
-      <form bindsubmit='onSubmitCard' bindreset='onFormRest'>
-        <view class="section">
-          <view class="section__title">姓名</view>
-          <input name="input" placeholder="..." />
-        </view>
-        <view class="section">
-          <view class="section__title">电话</view>
-          <input name="input" placeholder="..." />
-        </view>
-      </form>
-    </modal>
-  </view>
-  -->
+  <block wx:else>
+    <view>添加名片</view>
+  </block>
+
+
 </view>

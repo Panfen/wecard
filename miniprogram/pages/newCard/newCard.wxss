@@ -175,6 +175,10 @@
   color: #999;
   border: 1rpx solid #ccc;
 }
+.card-form .img-box button.uploaded{
+  border-color: #1AAD19;
+}
+
 .card-form .img-box button:last-child{
   margin-right: 0;
 }

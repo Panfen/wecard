@@ -1,13 +1,12 @@
 /* 阿里字体图标样式 */
-
 @font-face {
   font-family: 'iconfont';  /* project id 1205494 */
-  src: url('//at.alicdn.com/t/font_1205494_oz2s7299c.eot');
-  src: url('//at.alicdn.com/t/font_1205494_oz2s7299c.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1205494_oz2s7299c.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1205494_oz2s7299c.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1205494_oz2s7299c.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1205494_oz2s7299c.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.eot');
+  src: url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1205494_x7hguzyzh5.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -90,4 +89,29 @@
 /* 接入 */
 .icon-APIjieru:before{
   content: "\ec16";
+}
+
+/* 爱心 */
+.icon-aixin:before{
+  content: "\eca2";
+}
+
+/* 爱心-实体 */
+.icon-aixin_shixin:before{
+  content: "\eca1";
+}
+
+/* 浏览 */
+.icon-zitiyulan:before{
+  content: "\ec86";
+}
+
+/* 收藏 */
+.icon-xingzhuang-xingxing:before{
+  content: "\ec9a";
+}
+
+/* 收藏-实体 */
+.icon-ditu-xing:before{
+  content: "\ec43";
 }

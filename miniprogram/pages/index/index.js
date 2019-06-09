@@ -12,7 +12,11 @@ Page({
   },
 
   onLoad: function() {
+    wx.showLoading({
+      title: '数据加载中',
+    })
     this.getMyCard();
+    wx.hideLoading()
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -30,18 +34,18 @@ Page({
   getMyCard: function () {
     const db = wx.cloud.database()
     db.collection('cards').where({
-      _openid: 'oNPv50Aht_HLlkyfpsgIYbTV1z_U'
+      _openid: 'oNPv50Aht_HLlkyfpsgIYbTV1z_U'  // 待修改
     }).get({
       success: res => {
         const card = res.data[0]
         card._isrecommend = 0
         this.setData({
-          mycard: card
+          // mycard: card
         })
       },
       fail: err => {
         console.error('[数据库] [查询记录] 失败：', err)
-      }
+      }    
     })
   },
 
@@ -49,9 +53,9 @@ Page({
     
   },
 
-  onEditCard: function() {
+  onEditCard: function(e) {
     wx.navigateTo({
-      url: '../newCard/newCard',
+      url: '../newCard/newCard?card_id=' + e.currentTarget.dataset.id,
     })
   }
 

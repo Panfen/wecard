@@ -7,6 +7,6 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database()
   return await db.collection('cards').where({
-    _ispublic: 1
+    _ispublic: true
   }).get()
 }

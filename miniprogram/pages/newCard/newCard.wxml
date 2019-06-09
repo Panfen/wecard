@@ -50,21 +50,21 @@
       </view>
       <text class='title'>信息填写</text>
       <form class='card-form' bindsubmit='onCardSubmit' bindreset='onCardReset'>
-        <input name='name' placeholder='姓名'></input>
-        <input name='position' placeholder='职位'></input>
-        <input name='phone' placeholder='电话号码'></input>
-        <input name='weixin' placeholder='微信'></input>
-        <input name='company' placeholder='公司名称'></input>
-        <input name='email' placeholder='电子邮件'></input>
+        <input name='name' placeholder='姓名' value='{{currentCard.name}}'></input>
+        <input name='position' placeholder='职位' value='{{currentCard.position}}'>as</input>
+        <input name='phone' placeholder='电话号码' value='{{currentCard.phone}}'></input>
+        <input name='weixin' placeholder='微信' value='{{currentCard.weixin}}'></input>
+        <input name='company' placeholder='公司名称' value='{{currentCard.company}}'></input>
+        <input name='email' placeholder='电子邮件' value='{{currentCard.email}}'></input>
         <text class='title'>上传头像</text>
         <view class='img-box'>
-          <button type='default' size='mini' bindtap="onUploadAvatar">头像</button>
-          <button type='default' size='mini' bindtap="onUploadBgcover">背景1</button>
-          <button type='default' size='mini' bindtap="onUploadBgcover">背景2</button>
+          <button type='default' size='mini' bindtap="onUploadImg" data-type="avatar" class="{{avatar_url!=''?'uploaded':''}}">头像</button>
+          <button type='default' size='mini' bindtap="onUploadImg" data-type="background" class="{{background_url!=''?'uploaded':''}}">背景1</button>
+          <button type='default' size='mini'>背景2</button>
         </view>
         <text class='title'>公开名片</text>
-        <switch name="isPublic" />
-         <view class='button-box'>
+        <switch name="isPublic" checked="{{currentCard._ispublic}}"/>
+        <view class='button-box'>
           <button type='warn' size='mini' form-type="onCancelCard">取消</button>
           <button type='primary' size='mini' form-type="submit">保存</button>
         </view>

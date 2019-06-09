@@ -8,25 +8,42 @@ Page({
       location: '公司地址家庭住址',
       email: '电子邮件',
       pattern: 'pattern1',
-      background_url: 'http://img0.imgtn.bdimg.com/it/u=2619623045,2062180631&fm=26&gp=0.jpg',
-      avatar_url: 'http://img5.imgtn.bdimg.com/it/u=2290911925,3144166826&fm=26&gp=0.jpg'
+      background_url: '',
+      avatar_url: '',
     }
   },
 
   onLoad: function (options) {
-    
+    if (options.card_id) {
+      wx.cloud.callFunction({
+        name: 'getCardById',
+        data: {
+          _id: options.card_id
+        },
+        success: res => {
+          const currentCard = res.result.data[0];
+          currentCard._isrecommend = false;
+          this.setData({
+            currentCard
+          })
+        },
+        fail: err => {
+          console.error('[数据库] [云函数查询记录] 失败：', err)
+        }
+      })
+    }
   },
 
   onChoosePattern: function (event) {
     this.setCurrentCard(this, 'pattern', event.currentTarget.dataset.pattern)
   },
 
-  // 上传头像
-  onUploadAvatar: function () {
+  // 上传头像或背景图
+  onUploadImg: function (e) {
     const that = this
     that.uploadImage(function(res, imagePath){
       if (res.statusCode == 200) {
-        that.setCurrentCard(that, 'avatar_url', imagePath)
+        that.setCurrentCard(that, e.currentTarget.dataset.type == 'avatar' ? 'avatar_url' : 'background_url', imagePath)
       }
     })
   },
@@ -70,10 +87,9 @@ Page({
             })
           },
           complete: () => {
-            wx.hideLoading()
+            wx.hideLoading()          
           }
         })
-
       },
       fail: e => {
         console.error(e)
