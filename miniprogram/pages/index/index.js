@@ -57,6 +57,12 @@ Page({
     wx.navigateTo({
       url: '../newCard/newCard?card_id=' + e.currentTarget.dataset.id,
     })
+  },
+
+  onCreateCard: function () {
+    wx.navigateTo({
+      url: '../newCard/newCard'
+    })
   }
 
 })

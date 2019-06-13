@@ -58,8 +58,8 @@
         <input name='email' placeholder='电子邮件' value='{{currentCard.email}}'></input>
         <text class='title'>上传头像</text>
         <view class='img-box'>
-          <button type='default' size='mini' bindtap="onUploadImg" data-type="avatar" class="{{avatar_url!=''?'uploaded':''}}">头像</button>
-          <button type='default' size='mini' bindtap="onUploadImg" data-type="background" class="{{background_url!=''?'uploaded':''}}">背景1</button>
+          <button type='default' size='mini' bindtap="onUploadImg" data-type="avatar" class="{{currentCard.avatar_url!=''?'uploaded':''}}">头像</button>
+          <button type='default' size='mini' bindtap="onUploadImg" data-type="background" class="{{currentCard.background_url!=''?'uploaded':''}}">背景1</button>
           <button type='default' size='mini'>背景2</button>
         </view>
         <text class='title'>公开名片</text>
