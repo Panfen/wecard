@@ -39,8 +39,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  background: url('http://img5.imgtn.bdimg.com/it/u=2290911925,3144166826&fm=26&gp=0.jpg');
-  background-size: cover; 
+  background: rgba(104, 102, 102, 0.2);
 }
 .card .info-box{
   margin-top: 14rpx;

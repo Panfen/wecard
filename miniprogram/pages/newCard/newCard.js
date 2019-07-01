@@ -1,12 +1,21 @@
 Page({
   data: {
-    currentCard: {
-      name: '名字',
+    card:{
+      name: '姓名',
       position: '职位',
-      company: '公司名称',
-      phone: '电话号码',
-      location: '公司地址家庭住址',
-      email: '电子邮件',
+      company: '公司',
+      phone: '电话',
+      location: '地址',
+      email: '邮件',
+      avatar_url: '头像'
+    },
+    currentCard: {
+      name: '姓名',
+      position: '职位',
+      company: '公司',
+      phone: '电话',
+      location: '地址',
+      email: '邮件',
       pattern: 'pattern1',
       background_url: '',
       avatar_url: '',
@@ -14,6 +23,7 @@ Page({
   },
 
   onLoad: function (options) {
+    // 加载名片
     if (options.card_id) {
       wx.cloud.callFunction({
         name: 'getCardById',
@@ -32,10 +42,20 @@ Page({
         }
       })
     }
+    // 新建名片
+    else if (options.action) {
+      this.setData({
+        currentCard: { pattern: 'pattern1', avatar_url: ''}
+      })
+    }
   },
 
   onChoosePattern: function (event) {
     this.setCurrentCard(this, 'pattern', event.currentTarget.dataset.pattern)
+  },
+
+  onInputHandle: function (event) {
+    this.setCurrentCard(this, event.currentTarget.dataset.field, event.detail.value)
   },
 
   // 上传头像或背景图
@@ -75,19 +95,18 @@ Page({
           cloudPath,
           filePath,
           success: res => {
+            wx.hideLoading()
             wx.showToast({
               title: '上传成功',
             })
             cb(res, filePath)
           },
           fail: e => {
+            wx.hideLoading()
             wx.showToast({
               icon: 'none',
               title: '上传失败，请重试',
             })
-          },
-          complete: () => {
-            wx.hideLoading()          
           }
         })
       },
@@ -102,7 +121,39 @@ Page({
   },
 
   onCardSubmit: function (e) {
-    console.log(e.detail.value)
+    const postData = { ...e.detail.value, ...this.data.currentCard }
+    let flag = true
+    Object.keys(this.data.card).forEach(key => {
+      if (postData[key].length === 0) {
+        this.showEmptyWarning(key)
+        flag = false
+      }
+    })
+    if (flag) {
+      const db = wx.cloud.database();
+      db.collection('cards').add({
+        data: postData,
+        success: res => {
+          wx.showToast({
+            title: '新增记录成功!',
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '新增记录失败!',
+          })
+          console.log(err)
+        }
+      })
+    }
+  },
+
+  showEmptyWarning: function (type) {
+    wx.showToast({
+      icon: 'none',
+      title: this.data.card[type] + '不能为空!'
+    })
   }
   
 })

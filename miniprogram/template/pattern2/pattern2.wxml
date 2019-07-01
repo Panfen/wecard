@@ -2,17 +2,17 @@
   <view class='card2'>
     <view wx:if="{{_isrecommend}}" class='recommend iconfont icon-recommend'></view>
     <view class='company-box'>
-      <text class='company'>{{company}}</text>
+      <text class='company'>{{company?company:'公司'}}</text>
     </view>
     <view class='name-box'>
-      <text class='name'>{{name}}</text>
-      <text class='position'>{{position}}</text>
+      <text class='name'>{{name?name:'姓名'}}</text>
+      <text class='position'>{{position?position:'职位'}}</text>
     </view>
     <view class='info-box'>
-      <text class='iconfont icon-home'> {{company}}</text>
-      <text class='iconfont icon-phone'> {{phone}}</text>
-      <text class='iconfont icon-location'> {{location}}</text>
-      <text class='iconfont icon-youjian'> {{email}}</text>
+      <text class='iconfont icon-home'> {{company?company:'公司'}}</text>
+      <text class='iconfont icon-phone'> {{phone?phone:'电话'}}</text>
+      <text class='iconfont icon-location'> {{location?location:'地址'}}</text>
+      <text class='iconfont icon-youjian'> {{email?email:'邮箱'}}</text>
     </view>
   </view>
 </template>

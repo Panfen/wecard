@@ -6,11 +6,11 @@
       <view class='avatar'><image src='{{avatar_url}}'></image></view>
     </view>
     <view class='info-box'>
-      <text class='name'>{{name}}</text>
-      <text class='position'>{{position}}</text>
-      <text class='iconfont icon-home'> {{company}}</text>
-      <text class='iconfont icon-phone'> {{phone}}</text>
-      <text class='iconfont icon-youjian'> {{email}}</text>
+      <text class='name'>{{name?name:'姓名'}}</text>
+      <text class='position'>{{position?position:'职位'}}</text>
+      <text class='iconfont icon-home'> {{company?company:'公司'}}</text>
+      <text class='iconfont icon-phone'> {{phone?phone:'电话'}}</text>
+      <text class='iconfont icon-youjian'> {{email?email:'邮箱'}}</text>
     </view>
   </view>
 </template>
