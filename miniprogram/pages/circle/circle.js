@@ -46,5 +46,32 @@ Page({
     wx.navigateTo({
       url: '../cardDetail/cardDetail?card_id=' + e.currentTarget.dataset.id,
     })
+  },
+
+  OnSearchCard: function (e) {
+    const searchName = e.detail.value.trim()
+    if (searchName) {
+      const db = wx.cloud.database()
+      db.collection('cards').where({
+        name: {
+          $regex: '.*' + searchName,
+          $options: 'i'
+        }
+      }).get({
+        success: res => {
+          this.setData({
+            cardList: res.data
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        }
+      })
+    }
+    
   }
 })

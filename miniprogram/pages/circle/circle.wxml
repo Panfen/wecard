@@ -4,7 +4,7 @@
 <view class="container">
   <view class='wrap'>
     <view class='search-box'>
-      <input class='searchinput' placeholder='搜索'></input>
+      <input class='searchinput' placeholder='搜索'  bindinput='OnSearchCard'></input>
       <button><text class='iconfont icon-weibiaoti-'></text></button>
     </view>
     <view class='list-box'>
