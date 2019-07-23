@@ -15,7 +15,8 @@
     "pages/circle/circle",
     "pages/cardDetail/cardDetail",
     "pages/newCard/newCard",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/scanCard/scanCard"
   ],
   "tabBar": {
     "color": "#a9b7b7",

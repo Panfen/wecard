@@ -1,0 +1,103 @@
+/* miniprogram/pages/scanCard/scanCard.wxss */
+.container{
+  height: 100%;
+}
+.scan-box{
+  width: 100%;
+  height: 100%;
+}
+.scan-box camera{
+  height: 100%;
+}
+.scan-box .cover{
+  width: 100%;
+  height: 400rpx;
+  position: absolute;
+  top: 26%;
+  left: 0;
+  z-index: 999;
+}
+.scan-box .cover .inner{
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  position: relative;
+  border: 1rpx solid rgba(255, 255, 255, 0.4)
+}
+.scan-box .cover .inner .corner{
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+}
+.scan-box .cover .inner .corner:before{
+  content: "";
+  display: block;
+  width: 30rpx;
+  height: 8rpx;
+  background: #1AAD19;
+  position: absolute;
+}
+.scan-box .cover .inner .corner:after{
+  content: "";
+  display: block;
+  width: 8rpx;
+  height: 30rpx;
+  background: #1AAD19;
+  position: absolute;
+}
+.scan-box .cover .inner .corner.top-left, .scan-box .cover .inner .corner.top-left:before, .scan-box .cover .inner .corner.top-left:after{
+  top: 0;
+  left: 0;
+}
+.scan-box .cover .inner .corner.top-right, .scan-box .cover .inner .corner.top-right:before, .scan-box .cover .inner .corner.top-right:after{
+  top: 0;
+  right: 0;
+}
+.scan-box .cover .inner .corner.bottom-left, .scan-box .cover .inner .corner.bottom-left:before, .scan-box .cover .inner .corner.bottom-left:after{
+  bottom: 0;
+  left: 0;
+}
+.scan-box .cover .inner .corner.bottom-right, .scan-box .cover .inner .corner.bottom-right:before, .scan-box .cover .inner .corner.bottom-right:after{
+  bottom: 0;
+  right: 0;
+}
+.scan-box .cover .inner .slidebar{
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  animation: move 3s infinate;
+  -webkit-animation: move 3s infinite;
+  -webkit-animation-timing-function: linear;
+}
+.scan-box .cover .inner .slidebar:after{
+  content: "";
+  display: block;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(26, 173, 25, 0.1) 10%,
+    rgba(26, 173, 25, 0.3) 20%,
+    rgba(26, 173, 25, 0.4) 30%,
+    rgba(26, 173, 25, 0.5) 40%,
+    rgba(26, 173, 25, 0.8) 50%,
+    rgba(26, 173, 25, 0.5) 60%,
+    rgba(26, 173, 25, 0.4) 70%,
+    rgba(26, 173, 25, 0.3) 80%,
+    rgba(26, 173, 25, 0.1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  )
+}
+
+@keyframes move{
+  from {
+    top: 0;
+  }
+  to {
+    top: 398rpx;
+  }
+}

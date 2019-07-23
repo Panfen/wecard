@@ -38,6 +38,7 @@
     <view class='create'>
       <text class='iconfont icon-xinxikongxin'> 您目前还没有名片哦</text>
       <button type='primary' size='mini' bindtap="onCreateCard">立即创建</button>
+      <button class="scancard" type='primary' size='mini' bindtap="onScanCard">扫一扫添加</button>
     </view>
   </block>
 

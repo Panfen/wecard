@@ -104,4 +104,8 @@ page {
 .container .create button{
   display: block;
   width: 50%;
+  line-height: 70rpx;
+}
+.container .create button.scancard{
+  margin-top: 40rpx;
 }

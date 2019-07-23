@@ -1,0 +1,16 @@
+<!--miniprogram/pages/scanCard/scanCard.wxml-->
+<view class='container'>
+  <view class='scan-box'>
+    <camera mode="scanCode" device-position="back" flash="off" binderror="error" bindscancode="onScanCard">
+      <cover-view class="cover">
+        <cover-view class='inner'>
+          <cover-view class="corner top-left"></cover-view>
+          <cover-view class="corner top-right"></cover-view>
+          <cover-view class="corner bottom-left"></cover-view>
+          <cover-view class="corner bottom-right"></cover-view>
+          <cover-view class='slidebar'></cover-view>
+        </cover-view>
+      </cover-view>
+    </camera>
+  </view>
+</view>
