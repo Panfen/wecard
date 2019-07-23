@@ -21,4 +21,12 @@ Page({
     })
   },
 
+  onShareAppMessage: function() {
+    return {
+      title: this.data.currentCard.name + '的名片',
+      path: '/pages/cardDetail/cardDetail?card_id=' + this.data.currentCard._id,
+      imageUrl: 'http://img0.imgtn.bdimg.com/it/u=2989671597,4007587093&fm=26&gp=0.jpg'
+    }
+  }
+
 })

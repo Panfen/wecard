@@ -8,7 +8,7 @@
     </view>
     <view class='button-box'>
       <button type='primary' size='mini' bindtap="onCollectCard">收藏名片</button>
-      <button type='default' size='mini' bindtap="onShareCard">分享名片</button>
+      <button type='default' size='mini' open-type="share">分享名片</button>
     </view>
     <view class='act-box'>
       <scroll-view scroll-x style='white-space: nowrap;'>
