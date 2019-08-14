@@ -196,6 +196,10 @@
   line-height: 78rpx;
   font-size: 34rpx;
 }
+.card-form .button-box button.cancel {
+  background: none;
+  border: 1rpx solid #DEDEDE;
+}
 .card-form .button-box button:first-child{
   margin-right: 4%;
 }

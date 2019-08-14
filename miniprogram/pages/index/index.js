@@ -12,11 +12,6 @@ Page({
   },
 
   onLoad: function() {
-    wx.showLoading({
-      title: '数据加载中',
-    })
-    this.getMyCard();
-    wx.hideLoading()
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -31,6 +26,24 @@ Page({
     })
   },
 
+  /**
+    * 生命周期函数--监听页面初次渲染完成
+    */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    this.getMyCard();
+    wx.hideLoading()
+  },
+
   getMyCard: function () {
     const db = wx.cloud.database()
     db.collection('cards').where({
@@ -40,7 +53,7 @@ Page({
         const card = res.data[0]
         card._isrecommend = 0
         this.setData({
-          // mycard: card
+          mycard: card
         })
       },
       fail: err => {
@@ -66,6 +79,7 @@ Page({
   },
 
   onScanCard: function () {
+    // 腾讯云OCR名片识别接口：https://cloud.tencent.com/document/product/866/36214
     /*
     wx.scanCode({
       success: res => {

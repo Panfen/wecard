@@ -19,7 +19,8 @@ Page({
       pattern: 'pattern1',
       background_url: '',
       avatar_url: '',
-    }
+    },
+    fileId: ''
   },
 
   onLoad: function (options) {
@@ -61,11 +62,7 @@ Page({
   // 上传头像或背景图
   onUploadImg: function (e) {
     const that = this
-    that.uploadImage(function(res, imagePath){
-      if (res.statusCode == 200) {
-        that.setCurrentCard(that, e.currentTarget.dataset.type == 'avatar' ? 'avatar_url' : 'background_url', imagePath)
-      }
-    })
+    this.uploadImage(e.currentTarget.dataset.type)
   },
 
   // 设置currentCard某一项
@@ -78,8 +75,9 @@ Page({
   },
 
   // 上传图片
-  uploadImage: function (cb) {
+  uploadImage: function (type) {
     // 选择图片
+    const that = this;
     wx.chooseImage({
       count: 1,
       sizeType: ['compressed'],
@@ -90,16 +88,15 @@ Page({
         })
         const filePath = res.tempFilePaths[0]
         // 上传图片
-        const cloudPath = 'wecard-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
-          cloudPath,
+          cloudPath: type + filePath.match(/\.[^.]+?$/)[0],
           filePath,
           success: res => {
+            that.getPublicImgUrl(res.fileID, type)
             wx.hideLoading()
             wx.showToast({
-              title: '上传成功',
+              title: '上传成功啦'
             })
-            cb(res, filePath)
           },
           fail: e => {
             wx.hideLoading()
@@ -116,8 +113,22 @@ Page({
     })
   },
 
-  onCancelCard: function () {
+  onCardReset: function () {
+    console.log('reset')
+  },
 
+  getPublicImgUrl: function(fileId, type) {
+    const that = this
+    wx.cloud.getTempFileURL({
+      fileList: [fileId],
+      success: res => {
+        console.log(res)
+        that.setCurrentCard(that, type == 'avatar' ? 'avatar_url' : 'background_url', res.fileList[0].tempFileURL)
+      },
+      fail: err => {
+        console.log('获取图片真实链接失败')
+      }
+    })
   },
 
   onCardSubmit: function (e) {
@@ -136,6 +147,9 @@ Page({
         success: res => {
           wx.showToast({
             title: '新增记录成功!',
+          })
+          wx.navigateTo({
+            url: '../index/index',
           })
         },
         fail: err => {
