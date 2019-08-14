@@ -9,7 +9,6 @@ Page({
       title: '列表加载中',
     })
     this.getCardList()
-    
   },
 
   getCardList: function () {

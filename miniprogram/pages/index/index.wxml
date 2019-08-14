@@ -34,7 +34,7 @@
     </view>
   </block>
 
-  <block wx:else>
+  <block wx:if="{{nocard}}">
     <view class='create'>
       <text class='iconfont icon-xinxikongxin'> 您目前还没有名片哦</text>
       <button type='primary' size='mini' bindtap="onCreateCard">立即创建</button>

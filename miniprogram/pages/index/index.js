@@ -8,22 +8,12 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    mycard: {}
+    mycard: {},
+    nocard: false
   },
 
   onLoad: function() {
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              app.globalData.userInfo = res.userInfo
-            }
-          })
-        }
-      }
-    })
+
   },
 
   /**
@@ -37,24 +27,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showLoading({
-      title: '数据加载中',
-    })
-    this.getMyCard();
-    wx.hideLoading()
+    
+    this.getMyCard()
   },
 
   getMyCard: function () {
+    wx.showLoading({
+      title: '数据加载中',
+    })
     const db = wx.cloud.database()
     db.collection('cards').where({
       _openid: 'oNPv50Aht_HLlkyfpsgIYbTV1z_U'  // 待修改
     }).get({
       success: res => {
-        const card = res.data[0]
-        card._isrecommend = 0
-        this.setData({
-          mycard: card
-        })
+        console.log(res)
+        if (res.data.length !== 0) {
+          const card = res.data[0]
+          card._isrecommend = 0
+          this.setData({
+            mycard: card
+          })
+        } else {
+          this.setData({ nocard: true })
+        }
+        wx.hideLoading()
       },
       fail: err => {
         console.error('[数据库] [查询记录] 失败：', err)
