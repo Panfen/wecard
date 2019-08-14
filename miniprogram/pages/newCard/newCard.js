@@ -20,20 +20,22 @@ Page({
       background_url: '',
       avatar_url: '',
     },
-    fileId: ''
+    act: 'add'
   },
 
   onLoad: function (options) {
     // 加载名片
     if (options.card_id) {
+      this.setData({act: 'update'})
       wx.cloud.callFunction({
         name: 'getCardById',
         data: {
           _id: options.card_id
         },
         success: res => {
-          const currentCard = res.result.data[0];
-          currentCard._isrecommend = false;
+          const currentCard = res.result.data[0]
+          currentCard._isrecommend = false
+          delete currentCard._openid
           this.setData({
             currentCard
           })
@@ -114,7 +116,9 @@ Page({
   },
 
   onCardReset: function () {
-    console.log('reset')
+    wx.navigateBack({
+      delta: 1
+    })
   },
 
   getPublicImgUrl: function(fileId, type) {
@@ -142,24 +146,48 @@ Page({
     })
     if (flag) {
       const db = wx.cloud.database();
-      db.collection('cards').add({
-        data: postData,
-        success: res => {
-          wx.showToast({
-            title: '新增记录成功!',
-          })
-          wx.navigateTo({
-            url: '../index/index',
-          })
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '新增记录失败!',
-          })
-          console.log(err)
-        }
-      })
+      if (this.data.act === 'add') {
+        // 添加记录
+        db.collection('cards').add({
+          data: postData,
+          success: res => {
+            wx.showToast({
+              title: '新增记录成功'
+            })
+            wx.navigateBack({
+              delta: 1
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '新增记录失败'
+            })
+          }
+        })
+      }
+       else {
+         // 更新记录
+        const _id = this.data.currentCard._id
+        delete this.data.currentCard._id
+        db.collection('cards').doc(_id).update({
+          data: {...this.data.currentCard},
+          success: res => {
+            wx.showToast({
+              title: '更新记录成功'
+            })
+            wx.navigateBack({
+              delta: 1
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '更新记录失败'
+            })
+          }
+        })
+       }
     }
   },
 

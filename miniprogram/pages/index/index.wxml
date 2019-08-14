@@ -5,7 +5,7 @@
 
   <block wx:if="{{mycard.name}}">
     <view class="top">
-      <image src='{{mycard.avatar_url}}'></image>
+      <image src='{{mycard.background_url}}'></image>
       <view class='card-wrap'>
         <view class='card-box'>
           <template is="pattern1" data="{{...mycard}}" />
