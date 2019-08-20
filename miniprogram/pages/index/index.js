@@ -1,5 +1,4 @@
 const { uploadImage, getPublicImageUrl, base64_encode } = require('../../utils/util.js')
-const CryptoJS = require('../../utils/hmac-sha1.js')
 
 const app = getApp()
 
@@ -10,19 +9,21 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    mycard: {},
+    mycard: {
+      background_url: 'http://pic.51yuansu.com/pic3/cover/01/91/36/59829799f40f5_610.jpg'
+    },
     nocard: false
   },
 
   onLoad: function() {
-    
+    this.getMyCard()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getMyCard()
+    // this.getMyCard()
   },
 
   getMyCard: function () {
@@ -39,7 +40,7 @@ Page({
         getPublicImageUrl(card.avatar_fileId).then(realUrl => {
           card.avatar_url = realUrl
           this.setData({
-            mycard: card
+            mycard: {...this.data.mycard, ...card}
           })
         })
       } else {

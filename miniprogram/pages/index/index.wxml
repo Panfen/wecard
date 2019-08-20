@@ -15,7 +15,7 @@
     <view class="bottom">
       <view class='button-box'>
         <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
-        <button type='default' size='mini' bindtap="onScanCard">扫名片</button>
+        <button type='default' size='mini' bindtap="onScanCard">识别名片</button>
       </view>
     </view>
   </block>
@@ -24,7 +24,7 @@
     <view class='create'>
       <text class='iconfont icon-xinxikongxin'> 您目前还没有名片哦</text>
       <button type='primary' size='mini' bindtap="onCreateCard">立即创建</button>
-      <button class="scancard" type='primary' size='mini' bindtap="onScanCard">扫一扫添加</button>
+      <button class="scancard" type='primary' size='mini' bindtap="onScanCard">名片识别</button>
     </view>
   </block>
 

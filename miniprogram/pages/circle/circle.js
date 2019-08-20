@@ -5,6 +5,10 @@ Page({
   },
 
   onLoad: function (options) {
+    
+  },
+
+  onShow: function () {
     wx.showLoading({
       title: '列表加载中',
     })

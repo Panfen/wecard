@@ -1,5 +1,6 @@
-/* miniprogram/pages/circle/circle.wxss */
-
+page{
+  /* background: #F8F9FD; */
+}
 .wrap{
   width: 90%;
   margin: 0 auto;

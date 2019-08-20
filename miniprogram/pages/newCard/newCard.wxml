@@ -93,7 +93,7 @@
           <button type='default' size='mini' bindtap="onUploadImg" data-type="background" class="{{currentCard.background_url?'uploaded':''}}">背景图(可选)</button>
         </view>
         <text class='title'>公开名片</text>
-        <switch name="_ispublic" checked="{{currentCard._ispublic?currentCard._ispublic:false}}"/>
+        <switch name="_ispublic" checked="{{currentCard._ispublic?currentCard._ispublic:false}}" bindchange="isPublicChange"/>
         <view class='button-box'>
           <button type="default" size='mini' class="cancel" form-type="reset">返回</button>
           <button type='primary' size='mini' form-type="submit">保存</button>

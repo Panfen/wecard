@@ -80,6 +80,10 @@ Page({
     })
   },
 
+  isPublicChange: function (e) {
+    this.setCurrentCard(this, '_ispublic', e.detail.value)
+  },
+
   // 设置currentCard某一项
   setCurrentCard: function (that, key, value) {
     const currentCard = that.data.currentCard
@@ -88,8 +92,6 @@ Page({
       currentCard
     })
   },
-
-
 
   onCardReset: function () {
     wx.navigateBack({
@@ -100,14 +102,14 @@ Page({
   onCardSubmit: function (e) {
     const postData = { ...e.detail.value, ...this.data.currentCard }
     console.log(JSON.stringify(postData, null, 2))
-    let flag = true
+    let infoCompleted = true
     Object.keys(postData).forEach(key => {
       if (postData[key] === '') {
         this.showEmptyWarning(key)
-        flag = false
+        infoCompleted = false
       }
     })
-    if (flag) {
+    if (infoCompleted) {
       const db = wx.cloud.database();
       if (this.data.act === 'add') {
         // 添加记录
