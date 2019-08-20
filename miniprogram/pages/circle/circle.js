@@ -1,4 +1,5 @@
-// miniprogram/pages/circle/circle.js
+const { getPublicImageUrl } = require('../../utils/util.js')
+
 Page({
   data: {
     cardList: []
@@ -17,11 +18,11 @@ Page({
 
   getCardList: function () {
     wx.cloud.callFunction({
-      name: 'getcardlist',
+      name: 'getCardList',
       data: {},
       success: res => {
         this.setData({
-          cardList: res.result.data
+          cardList: res.result
         })
       },
       fail: err => {

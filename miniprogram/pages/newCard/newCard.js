@@ -1,5 +1,4 @@
-const { uploadImage } = require('../../utils/util.js')
-
+const { uploadImage, getPublicImageUrl } = require('../../utils/util.js')
 
 Page({
   data: {
@@ -22,6 +21,9 @@ Page({
   onLoad: function (options) {
     // 加载名片
     if (options.card_id) {
+      wx.showLoading({
+        title: '数据加载中...',
+      })
       this.setData({act: 'update'})
       wx.cloud.callFunction({
         name: 'getCardById',
@@ -32,8 +34,13 @@ Page({
           const currentCard = res.result.data[0]
           currentCard._isrecommend = false
           delete currentCard._openid
-          this.setData({
-            currentCard
+
+          getPublicImageUrl(currentCard.avatar_fileId).then(realUrl => {
+            currentCard.avatar_url = realUrl
+            this.setData({
+              currentCard: currentCard
+            })
+            wx.hideLoading()
           })
         },
         fail: err => {

@@ -53,38 +53,43 @@
       <text class='title'>信息填写</text>
       <form class='card-form' bindsubmit='onCardSubmit' bindreset='onCardReset'>
         <view class="form-item required">
-          <input name='name' placeholder='姓名' value='{{currentCard.name}}' 
+          姓名：<input name='name' value='{{currentCard.name}}' 
             bindinput='onInputHandle' data-field="name">
           </input>
         </view>
         <view class="form-item required">
-          <input name='position' placeholder='职位' value='{{currentCard.position}}' 
+          职位：<input name='position' value='{{currentCard.position}}' 
             bindinput='onInputHandle' data-field="position">
           </input>
         </view>
         <view class="form-item required">
-          <input name='phone' placeholder='电话' value='{{currentCard.phone}}' 
+          电话：<input name='phone' value='{{currentCard.phone}}' 
             bindinput='onInputHandle' data-field="phone">
           </input>
         </view>
-        <view class="form-item">
-          <input name='weixin' placeholder='微信' value='{{currentCard.weixin}}' 
-            bindinput='onInputHandle' data-field="weixin">
-          </input>
-        </view>
         <view class="form-item required">
-          <input name='company' placeholder='公司' value='{{currentCard.company}}' 
+          公司：<input name='company' value='{{currentCard.company}}' 
             bindinput='onInputHandle' data-field="company">
           </input>
         </view>
         <view class="form-item required">
-          <input name='location' placeholder='地址' value='{{currentCard.location}}' 
+          地址：<input name='location' value='{{currentCard.location}}' 
             bindinput='onInputHandle' data-field="location">
           </input>
         </view>
         <view class="form-item required">
-          <input name='email' placeholder='邮件' value='{{currentCard.email}}' 
+          邮件：<input name='email' value='{{currentCard.email}}' 
             bindinput='onInputHandle' data-field="email">
+          </input>
+        </view>
+         <view class="form-item">
+          微信：<input name='weixin' value='{{currentCard.weixin}}' 
+            bindinput='onInputHandle' data-field="weixin">
+          </input>
+        </view>
+        <view class="form-item">
+          网址：<input name='weixin' value='{{currentCard.website}}' 
+            bindinput='onInputHandle' data-field="weixin">
           </input>
         </view>
         <text class='title'>上传图片</text>

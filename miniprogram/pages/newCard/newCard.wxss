@@ -18,7 +18,7 @@
   color: #555;
   font-size: 30rpx; 
   display: block;
-  margin: 20rpx 0;
+  margin: 40rpx 0 20rpx 0;
 }
 .type-box .choices{
   width: 90%;
@@ -152,13 +152,21 @@
   width: 40rpx;
   margin: 0 0 0 10rpx;
 }
+.card-form .form-item{
+  color: #999;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+}
 .card-form input{
-  width: calc(90% - 30rpx);
-  margin: 0 auto;
+  flex: 1;
+  color: #555;
+  margin-right: 40rpx;
   height: 80rpx;
   line-height: 80rpx;
   background: #fff;
-  margin-bottom: 10rpx;
   font-size: 32rpx;
   padding-left: 30rpx;
   border-radius: 8rpx;

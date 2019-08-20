@@ -1,4 +1,4 @@
-const { uploadImage, getPublicImageUrl, base64_encode } = require('../../utils/util.js')
+const { uploadImage, getPublicImageUrl } = require('../../utils/util.js')
 
 const app = getApp()
 
