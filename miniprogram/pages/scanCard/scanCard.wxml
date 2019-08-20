@@ -1,7 +1,7 @@
 <!--miniprogram/pages/scanCard/scanCard.wxml-->
 <view class='container'>
   <view class='scan-box'>
-    <camera mode="scanCode" device-position="back" flash="off" binderror="error" bindscancode="onScanCard">
+    <camera device-position="back" flash="off" binderror="error">
       <cover-view class="cover">
         <cover-view class='inner'>
           <cover-view class="corner top-left"></cover-view>
@@ -12,5 +12,9 @@
         </cover-view>
       </cover-view>
     </camera>
+  </view>
+  <view class='btn-box'>
+    <button type="primary" class="photo-btn iconfont icon-paizhao" bindtap='takePhoto' hover-class="button-hover"></button>
+    <view class="choose-img" bindtap="choosePhoto">相册上传</view>
   </view>
 </view>

@@ -4,23 +4,25 @@
 }
 .scan-box{
   width: 100%;
-  height: 100%;
+  height: 55%;
 }
 .scan-box camera{
   height: 100%;
 }
 .scan-box .cover{
   width: 100%;
-  height: 400rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 26%;
+  top: 0;
   left: 0;
   z-index: 999;
 }
 .scan-box .cover .inner{
   width: 80%;
-  height: 90%;
-  margin: 0 auto;
+  height: 60%;
   position: relative;
   border: 1rpx solid rgba(255, 255, 255, 0.4)
 }
@@ -100,4 +102,37 @@
   to {
     top: 398rpx;
   }
+}
+
+.btn-box{
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-box .photo-btn{
+  width: 140rpx;
+  height: 140rpx;
+  font-size: 80rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90rpx;
+  box-sizing: content-box;
+  padding-left: 0;
+  padding-right: 0;
+  border: 20rpx solid rgba(255, 255, 255, 0.95);
+  box-shadow: 8rpx 8rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.btn-box .choose-img {
+  font-size: 24rpx;
+  text-align: center;
+  display: block;
+  margin-top: 60rpx;
+  color: #1890ff;
+  text-decoration: underline;
 }

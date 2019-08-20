@@ -203,3 +203,16 @@
 .card-form .button-box button:first-child{
   margin-right: 4%;
 }
+.card-form .form-item.required{
+  position: relative;
+}
+.card-form .form-item.required:after{
+  content: "*";
+  display: inline-block;
+  width: 4rpx;
+  height: 4rpx;
+  color: red;
+  position: absolute;
+  top: 24rpx;
+  right: 20rpx;
+}

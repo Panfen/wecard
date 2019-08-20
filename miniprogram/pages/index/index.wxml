@@ -7,7 +7,7 @@
     <view class="top">
       <image src='{{mycard.background_url}}'></image>
       <view class='card-wrap'>
-        <view class='card-box'>
+        <view class='card-box' bindtap="onEditCard" data-id="{{mycard._id}}">
           <template is="pattern1" data="{{...mycard}}" />
         </view>
       </view>
@@ -15,21 +15,7 @@
     <view class="bottom">
       <view class='button-box'>
         <button type='primary' size='mini' bindtap='onhandCard'>递名片</button>
-        <button type='default' size='mini' bindtap="onEditCard" data-id="{{mycard._id}}">编辑名片</button>
-      </view>
-      <view class='stats-box'>
-        <view class='stats-item'>
-          <text class='liulan iconfont icon-zitiyulan'></text>
-          <text>浏览:12665</text>
-        </view>
-        <view class='stats-item'>
-          <text class='shoucang iconfont icon-aixin_shixin'></text>
-          <text>推荐:2387</text>
-        </view>
-        <view class='stats-item'>
-          <text class='tuijian iconfont icon-ditu-xing'></text>
-          <text>收藏:9562</text>
-        </view>
+        <button type='default' size='mini' bindtap="onScanCard">扫名片</button>
       </view>
     </view>
   </block>
@@ -41,6 +27,5 @@
       <button class="scancard" type='primary' size='mini' bindtap="onScanCard">扫一扫添加</button>
     </view>
   </block>
-
 
 </view>

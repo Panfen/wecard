@@ -9,6 +9,7 @@
       <template is="{{currentCard.pattern}}" data="{{...currentCard}}" />
     </view>
     <view class='choices-wrap'>
+
       <text class='title'>样式选择</text>
       <view class='choices'>
         <!-- 样式1选项 -->
@@ -48,15 +49,44 @@
           </view>
         </view>
       </view>
+
       <text class='title'>信息填写</text>
       <form class='card-form' bindsubmit='onCardSubmit' bindreset='onCardReset'>
-        <input name='name' placeholder='姓名' value='{{currentCard.name}}' bindinput='onInputHandle' data-field="name"></input>
-        <input name='position' placeholder='职位' value='{{currentCard.position}}' bindinput='onInputHandle' data-field="position"></input>
-        <input name='phone' placeholder='电话' value='{{currentCard.phone}}' bindinput='onInputHandle' data-field="phone"></input>
-        <input name='weixin' placeholder='微信' value='{{currentCard.weixin}}' bindinput='onInputHandle' data-field="weixin"></input>
-        <input name='company' placeholder='公司' value='{{currentCard.company}}' bindinput='onInputHandle' data-field="company"></input>
-        <input name='location' placeholder='地址' value='{{currentCard.location}}' bindinput='onInputHandle' data-field="location"></input>
-        <input name='email' placeholder='邮件' value='{{currentCard.email}}' bindinput='onInputHandle' data-field="email"></input>
+        <view class="form-item required">
+          <input name='name' placeholder='姓名' value='{{currentCard.name}}' 
+            bindinput='onInputHandle' data-field="name">
+          </input>
+        </view>
+        <view class="form-item required">
+          <input name='position' placeholder='职位' value='{{currentCard.position}}' 
+            bindinput='onInputHandle' data-field="position">
+          </input>
+        </view>
+        <view class="form-item required">
+          <input name='phone' placeholder='电话' value='{{currentCard.phone}}' 
+            bindinput='onInputHandle' data-field="phone">
+          </input>
+        </view>
+        <view class="form-item">
+          <input name='weixin' placeholder='微信' value='{{currentCard.weixin}}' 
+            bindinput='onInputHandle' data-field="weixin">
+          </input>
+        </view>
+        <view class="form-item required">
+          <input name='company' placeholder='公司' value='{{currentCard.company}}' 
+            bindinput='onInputHandle' data-field="company">
+          </input>
+        </view>
+        <view class="form-item required">
+          <input name='location' placeholder='地址' value='{{currentCard.location}}' 
+            bindinput='onInputHandle' data-field="location">
+          </input>
+        </view>
+        <view class="form-item required">
+          <input name='email' placeholder='邮件' value='{{currentCard.email}}' 
+            bindinput='onInputHandle' data-field="email">
+          </input>
+        </view>
         <text class='title'>上传图片</text>
         <view class='img-box'>
           <button type='default' size='mini' bindtap="onUploadImg" data-type="avatar" class="{{currentCard.avatar_url?'uploaded':''}}">头像(必须)</button>
@@ -65,7 +95,7 @@
         <text class='title'>公开名片</text>
         <switch name="_ispublic" checked="{{currentCard._ispublic?currentCard._ispublic:false}}"/>
         <view class='button-box'>
-          <button type="default" size='mini' class="cancel" form-type="reset">重置</button>
+          <button type="default" size='mini' class="cancel" form-type="reset">返回</button>
           <button type='primary' size='mini' form-type="submit">保存</button>
         </view>
       </form>

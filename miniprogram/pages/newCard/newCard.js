@@ -1,24 +1,20 @@
+const { uploadImage } = require('../../utils/util.js')
+
+
 Page({
   data: {
-    card:{
-      name: '姓名',
-      position: '职位',
-      company: '公司',
-      phone: '电话',
-      location: '地址',
-      email: '邮件',
-      avatar_url: '头像'
-    },
     currentCard: {
-      name: '姓名',
-      position: '职位',
-      company: '公司',
-      phone: '电话',
-      location: '地址',
-      email: '邮件',
+      name: '',
+      position: '',
+      company: '',
+      phone: '',
+      location: '', 
+      email: '',
       pattern: 'pattern1',
       background_url: '',
+      background_fileId: '',
       avatar_url: '',
+      avatar_fileId: ''
     },
     act: 'add'
   },
@@ -51,6 +47,19 @@ Page({
         currentCard: { pattern: 'pattern1', avatar_url: ''}
       })
     }
+
+    const eventChannel = this.getOpenerEventChannel()
+
+    eventChannel.on('acceptScanCardData', data => {
+      const info = data.data
+      console.log(info)
+      if (info.NAME.length > 0) this.setCurrentCard(this, 'name', info.NAME)
+      if (info.TITLE.length > 0) this.setCurrentCard(this, 'position', info.TITLE)
+      if (info.MOBILE.length > 0) this.setCurrentCard(this, 'phone', info.MOBILE)
+      if (info.COMPANY.length > 0) this.setCurrentCard(this, 'company', info.COMPANY)
+      if (info.ADDR.length > 0) this.setCurrentCard(this, 'location', info.ADDR)
+      if (info.EMAIL.length > 0) this.setCurrentCard(this, 'email', info.EMAIL)
+    })
   },
 
   onChoosePattern: function (event) {
@@ -64,7 +73,11 @@ Page({
   // 上传头像或背景图
   onUploadImg: function (e) {
     const that = this
-    this.uploadImage(e.currentTarget.dataset.type)
+    const type = e.currentTarget.dataset.type
+    uploadImage().then((filePath, fileId) => {
+      that.setCurrentCard(that, type == 'avatar' ? 'avatar_url' : 'background_url', filePath)
+      that.setCurrentCard(that, type == 'avatar' ? 'avatar_fileId' : 'background_fileId', fileId)
+    })
   },
 
   // 设置currentCard某一项
@@ -76,44 +89,7 @@ Page({
     })
   },
 
-  // 上传图片
-  uploadImage: function (type) {
-    // 选择图片
-    const that = this;
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-        wx.showLoading({
-          title: '图片上传中',
-        })
-        const filePath = res.tempFilePaths[0]
-        // 上传图片
-        wx.cloud.uploadFile({
-          cloudPath: type + filePath.match(/\.[^.]+?$/)[0],
-          filePath,
-          success: res => {
-            that.getPublicImgUrl(res.fileID, type)
-            wx.hideLoading()
-            wx.showToast({
-              title: '上传成功啦'
-            })
-          },
-          fail: e => {
-            wx.hideLoading()
-            wx.showToast({
-              icon: 'none',
-              title: '上传失败，请重试',
-            })
-          }
-        })
-      },
-      fail: e => {
-        console.error(e)
-      }
-    })
-  },
+
 
   onCardReset: function () {
     wx.navigateBack({
@@ -121,25 +97,12 @@ Page({
     })
   },
 
-  getPublicImgUrl: function(fileId, type) {
-    const that = this
-    wx.cloud.getTempFileURL({
-      fileList: [fileId],
-      success: res => {
-        console.log(res)
-        that.setCurrentCard(that, type == 'avatar' ? 'avatar_url' : 'background_url', res.fileList[0].tempFileURL)
-      },
-      fail: err => {
-        console.log('获取图片真实链接失败')
-      }
-    })
-  },
-
   onCardSubmit: function (e) {
     const postData = { ...e.detail.value, ...this.data.currentCard }
+    console.log(JSON.stringify(postData, null, 2))
     let flag = true
-    Object.keys(this.data.card).forEach(key => {
-      if (postData[key].length === 0) {
+    Object.keys(postData).forEach(key => {
+      if (postData[key] === '') {
         this.showEmptyWarning(key)
         flag = false
       }

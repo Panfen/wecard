@@ -29,7 +29,7 @@ page {
 .container .top .card-wrap{
   width: 100%;
   position: absolute;
-  bottom: -40rpx;
+  bottom: 70rpx;
   left: 0;
 }
 .container .top .card-wrap .card-box{
