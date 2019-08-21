@@ -4,7 +4,7 @@
     <view class='name-box'>
       <text class='name'>{{name?name:'姓名'}}</text>
       <text class='position'>{{position?position:'职位'}}</text>
-      <image class='avatar' src='{{avatar_url}}'></image>
+      <image class='avatar' src='{{avatar_fileId}}'></image>
     </view>
     <view class='info-box'>
       <text class='iconfont icon-home'> {{company?company:'公司'}}</text>

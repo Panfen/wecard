@@ -1,4 +1,4 @@
-const { uploadImage, getPublicImageUrl } = require('../../utils/util.js')
+const { uploadImage } = require('../../utils/util.js')
 
 const app = getApp()
 
@@ -37,11 +37,8 @@ Page({
       if (res.data.length !== 0) {
         const card = res.data[0]
         card._isrecommend = 0
-        getPublicImageUrl(card.avatar_fileId).then(realUrl => {
-          card.avatar_url = realUrl
-          this.setData({
-            mycard: {...this.data.mycard, ...card}
-          })
+        this.setData({
+          mycard: { ...this.data.mycard, ...card }
         })
       } else {
         this.setData({ nocard: true })

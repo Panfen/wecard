@@ -34,14 +34,10 @@ Page({
           const currentCard = res.result.data[0]
           currentCard._isrecommend = false
           delete currentCard._openid
-
-          getPublicImageUrl(currentCard.avatar_fileId).then(realUrl => {
-            currentCard.avatar_url = realUrl
-            this.setData({
-              currentCard: currentCard
-            })
-            wx.hideLoading()
+          this.setData({
+            currentCard: currentCard
           })
+          wx.hideLoading()
         },
         fail: err => {
           console.error('[数据库] [云函数查询记录] 失败：', err)
@@ -59,7 +55,6 @@ Page({
 
     eventChannel.on('acceptScanCardData', data => {
       const info = data.data
-      console.log(info)
       if (info.NAME.length > 0) this.setCurrentCard(this, 'name', info.NAME)
       if (info.TITLE.length > 0) this.setCurrentCard(this, 'position', info.TITLE)
       if (info.MOBILE.length > 0) this.setCurrentCard(this, 'phone', info.MOBILE)
@@ -108,7 +103,6 @@ Page({
 
   onCardSubmit: function (e) {
     const postData = { ...e.detail.value, ...this.data.currentCard }
-    console.log(JSON.stringify(postData, null, 2))
     let infoCompleted = true
     Object.keys(postData).forEach(key => {
       if (postData[key] === '') {
@@ -138,8 +132,8 @@ Page({
           }
         })
       }
-       else {
-         // 更新记录
+      else {
+        // 更新记录
         const _id = this.data.currentCard._id
         delete this.data.currentCard._id
         db.collection('cards').doc(_id).update({

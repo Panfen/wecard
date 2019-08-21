@@ -19,10 +19,10 @@ Page({
   getCardList: function () {
     wx.cloud.callFunction({
       name: 'getCardList',
-      data: {},
+      data: {}, 
       success: res => {
         this.setData({
-          cardList: res.result
+          cardList: res.result.data
         })
       },
       fail: err => {
