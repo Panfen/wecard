@@ -12,11 +12,31 @@ Page({
     mycard: {
       background_url: 'http://pic.51yuansu.com/pic3/cover/01/91/36/59829799f40f5_610.jpg'
     },
-    nocard: false
+    nocard: false,
+    qrcodeUrl: '',
+    showModal: false
   },
 
   onLoad: function() {
-    this.getMyCard()
+    this.getMyCard();
+    this.getQrcode();
+  },
+
+  backToIndex: function () {
+    this.setData({ showModal: false });
+  },
+
+  getQrcode: function () {
+    wx.cloud.callFunction({
+      name: 'createQrcode',
+      data: {
+        _id: 'xxx'
+      },
+      success: res => {
+        const base64 =  wx.arrayBufferToBase64(res.result.buffer)
+        this.setData({ qrcodeUrl: base64})
+      }
+    })
   },
 
   /**
@@ -48,7 +68,7 @@ Page({
   },
 
   onhandCard: function() {
-    
+    this.setData({ showModal: true });
   },
 
   onEditCard: function(e) {

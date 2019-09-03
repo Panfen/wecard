@@ -2,7 +2,6 @@
 <import src="/template/pattern1/pattern1.wxml" />
 
 <view class="container">
-
   <block wx:if="{{mycard.name}}">
     <view class="top">
       <image src='{{mycard.background_url}}'></image>
@@ -27,5 +26,15 @@
       <button class="scancard" type='primary' size='mini' bindtap="onScanCard">名片识别</button>
     </view>
   </block>
+
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <image src="data:image/png;base64,{{qrcodeUrl}}" style="width: 300rpx; height: 300rpx"></image>
+    <view>
+      <button type='primary' size='mini'>微信分享</button>
+      <button class="cancel" type='default' size='mini' bindtap='backToIndex'>返回页面</button>
+    </view>
+    
+  </view>
 
 </view>
